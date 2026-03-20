@@ -10,6 +10,7 @@
 -------------------------------------------------------------------------- */
 function sumar(a, b) {
   // TU CÓDIGO AQUÍ 👇
+  return a + b;
 }
 
 /* --------------------------------------------------------------------------
@@ -17,7 +18,8 @@ function sumar(a, b) {
    Recibís dos números. Réstalos (a - b) y retorná el resultado.
 -------------------------------------------------------------------------- */
 function restar(a, b) {
-  // TU CÓDIGO AQUÍ 👇
+  // TU CÓDIGO AQUÍ
+  return a - b;
 }
 
 /* --------------------------------------------------------------------------
@@ -27,6 +29,7 @@ function restar(a, b) {
 -------------------------------------------------------------------------- */
 function unirNombre(nombre, apellido) {
   // TU CÓDIGO AQUÍ 👇
+  return `${nombre} ${apellido}`;
 }
 
 /* --------------------------------------------------------------------------
@@ -35,7 +38,8 @@ function unirNombre(nombre, apellido) {
    "Hola, soy [nombre] y tengo [edad] años."
 -------------------------------------------------------------------------- */
 function crearSaludo(nombre, edad) {
-  // TU CÓDIGO AQUÍ 👇
+  // TU CÓDIGO AQUÍ
+  return `Hola, soy ${nombre} y tengo ${edad} años.`;
 }
 
 /* --------------------------------------------------------------------------
@@ -44,6 +48,7 @@ function crearSaludo(nombre, edad) {
 -------------------------------------------------------------------------- */
 function detectarTipo(valor) {
   // TU CÓDIGO AQUÍ 👇
+  return typeof valor;
 }
 
 /* --------------------------------------------------------------------------
@@ -53,6 +58,7 @@ function detectarTipo(valor) {
 -------------------------------------------------------------------------- */
 function convertirANumero(str) {
   // TU CÓDIGO AQUÍ 👇
+  return Number(str);
 }
 
 /* --------------------------------------------------------------------------
@@ -61,6 +67,7 @@ function convertirANumero(str) {
 -------------------------------------------------------------------------- */
 function calcularLongitud(str) {
   // TU CÓDIGO AQUÍ 👇
+  return str.length;
 }
 
 /* --------------------------------------------------------------------------
@@ -69,6 +76,7 @@ function calcularLongitud(str) {
 -------------------------------------------------------------------------- */
 function aMayusculas(str) {
   // TU CÓDIGO AQUÍ 👇
+  return str.toUpperCase();
 }
 
 /* --------------------------------------------------------------------------
@@ -79,6 +87,7 @@ function aMayusculas(str) {
 -------------------------------------------------------------------------- */
 function calcularAreaCirculo(radio) {
   // TU CÓDIGO AQUÍ 👇
+  return Math.round((Math.PI * radio * radio) * 100) / 100;
 }
 
 /* --------------------------------------------------------------------------
@@ -88,6 +97,7 @@ function calcularAreaCirculo(radio) {
 -------------------------------------------------------------------------- */
 function verificarNaN(valor) {
   // TU CÓDIGO AQUÍ 👇
+  return isNaN(valor);
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA! Necesaria para los tests.
