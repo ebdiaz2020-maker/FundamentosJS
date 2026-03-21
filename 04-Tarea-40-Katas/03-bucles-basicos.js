@@ -11,6 +11,13 @@
 -------------------------------------------------------------------------- */
 function numerosHastaN(n) {
   // TU CÓDIGO AQUÍ 👇
+  const numeros = [];
+
+  for (let i = 1; i <= n; i++) {
+    numeros.push(i);
+  }
+  return numeros;
+
 }
 
 /* --------------------------------------------------------------------------
@@ -21,6 +28,12 @@ function numerosHastaN(n) {
 -------------------------------------------------------------------------- */
 function cuentaRegresiva(inicio) {
   // TU CÓDIGO AQUÍ 👇
+  const cuentaRegresiva = [];
+  for (let i = inicio; i >= 0; i--) {
+    cuentaRegresiva.push(i);
+  }
+  cuentaRegresiva.push("¡Despegue! 🚀");
+  return cuentaRegresiva;
 }
 
 /* --------------------------------------------------------------------------
@@ -30,6 +43,17 @@ function cuentaRegresiva(inicio) {
 -------------------------------------------------------------------------- */
 function tablaMultiplicar(numero) {
   // TU CÓDIGO AQUÍ 👇
+  const tablaMultiplicar = [];
+  let diezMultiplos = 0;
+  let multiplicador = 1;
+  while (diezMultiplos < 11) {
+    if(numero % multiplicador === 0) {
+      tablaMultiplicar.push(multiplicador.toString());
+      diezMultiplos++;
+    }
+    multiplicador++;
+  }
+  return tablaMultiplicar;
 }
 
 /* --------------------------------------------------------------------------
@@ -40,6 +64,11 @@ function tablaMultiplicar(numero) {
 -------------------------------------------------------------------------- */
 function factorial(n) {
   // TU CÓDIGO AQUÍ 👇
+  let resultado = 1;
+  for (let i = 1; i <= n; i++) {
+    resultado = resultado * i;
+  }
+  return resultado;
 }
 
 /* --------------------------------------------------------------------------
@@ -50,6 +79,13 @@ function factorial(n) {
 -------------------------------------------------------------------------- */
 function sinMultiplosDe4(limite) {
   // TU CÓDIGO AQUÍ 👇
+  const arrSinMultiplosDe4 = [];
+  for (let nro = 1; nro <= limite; nro++) {
+    if (nro % 4 !== 0) { // evito agregar los múltiplos de 4 al array
+      arrSinMultiplosDe4.push(nro);
+    }
+  }
+  return arrSinMultiplosDe4;
 }
 
 /* --------------------------------------------------------------------------
@@ -59,6 +95,15 @@ function sinMultiplosDe4(limite) {
 -------------------------------------------------------------------------- */
 function primerMultiploDe13MayorA100() {
   // TU CÓDIGO AQUÍ 👇
+  let primerMultiplo = 101; 
+  let noExisteX13 = true;
+  while (noExisteX13) { 
+    if (primerMultiplo % 13 === 0) {
+      noExisteX13 = false;
+      return primerMultiplo;
+    }
+    primerMultiplo++; 
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -68,6 +113,11 @@ function primerMultiploDe13MayorA100() {
 -------------------------------------------------------------------------- */
 function triangulo(filas) {
   // TU CÓDIGO AQUÍ 👇
+  const arrConFilas = [];
+  for (let i = 1; i <= filas; i++) {
+    arrConFilas.push(`Fila nro ${i}`);
+  }  
+  return arrConFilas;
 }
 
 /* --------------------------------------------------------------------------
@@ -77,6 +127,11 @@ function triangulo(filas) {
 -------------------------------------------------------------------------- */
 function sumaHastaN(n) {
   // TU CÓDIGO AQUÍ 👇
+  let sumaTotal = 0;
+  for (let numeros = 1; numeros <= n; numeros++) {
+    sumaTotal = sumaTotal + numeros;
+  }
+  return sumaTotal;
 }
 
 /* --------------------------------------------------------------------------
@@ -87,7 +142,17 @@ function sumaHastaN(n) {
 -------------------------------------------------------------------------- */
 function fibonacci(n) {
   // TU CÓDIGO AQUÍ 👇
+  const arrFibonacci = [];
+  arrFibonacci.push(0, 1);
+  let nuevoFibonacci = 0;
+
+  for (let i = 2; i < n; i++) {
+      nuevoFibonacci = arrFibonacci[i - 1] + arrFibonacci[i - 2];
+      arrFibonacci.push(nuevoFibonacci);
+    }
+ return arrFibonacci;  
 }
+
 
 /* --------------------------------------------------------------------------
    KATA 30 — ¿Es Primo?
@@ -97,6 +162,15 @@ function fibonacci(n) {
 -------------------------------------------------------------------------- */
 function esPrimo(numero) {
   // TU CÓDIGO AQUÍ 👇
+  if (numero <= 1) {
+    return false; //los números menores o iguales a 1 no son primos.
+  }
+  for (let i = 2; i < numero; i++) {
+    if (numero % i === 0) {
+      return false; //si el número es divisible por algún número entre 2 y él mismo, no es primo
+    }
+  }
+  return true; 
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
