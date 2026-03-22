@@ -19,6 +19,28 @@
 -------------------------------------------------------------------------- */
 function fizzBuzzExtendido(n) {
   // TU CÓDIGO AQUÍ 👇
+  if (n % 3 === 0 && n % 5 === 0 && n % 7 === 0) {
+    return "FizzBuzzBazz";
+  }
+  if (n % 3 === 0 && n % 5 === 0) {
+    return "FizzBuzz";
+  }
+  if (n % 3 === 0 && n % 7 === 0) {
+    return "FizzBazz";
+  }
+  if (n % 5 === 0 && n % 7 === 0) {
+    return "BuzzBazz";
+  }
+  if (n % 3 === 0) {
+    return "Fizz";
+  }
+  if (n % 5 === 0) {
+    return "Buzz";
+  }
+  if (n % 7 === 0) {
+    return "Bazz";
+  }
+  return n.toString();
 }
 
 /* --------------------------------------------------------------------------
@@ -29,6 +51,16 @@ function fizzBuzzExtendido(n) {
 -------------------------------------------------------------------------- */
 function calcularTotal(precios) {
   // TU CÓDIGO AQUÍ 👇
+  /*let sumPrecio = 0;   
+  for (let i = 0; i < precios.length; i++) { sumo precios iterando el array
+    sumPrecio += precios[i];
+  } */
+
+  const precioFinal = precios.reduce((acc, precio) => acc + precio, 0); // reduce calcular el total de un array de precios
+  if (precioFinal > 5000) {
+    return precioFinal * 0.85; 
+  }
+  return precioFinal;
 }
 
 /* --------------------------------------------------------------------------
@@ -39,6 +71,27 @@ function calcularTotal(precios) {
 -------------------------------------------------------------------------- */
 function contarParesEImpares(limite) {
   // TU CÓDIGO AQUÍ 👇
+  let cantPares = 0;
+  let cantImpares = 0;
+
+  for (let i = 1; i <= limite; i++) {
+    if (i % 2 === 0) {
+      cantPares++;
+    } else {
+      cantImpares++;
+    }
+  }
+  return { pares: cantPares, impares: cantImpares };
+}
+
+/* --------------------------------------------------------------------------
+   KATA 34 — Palabras en Mayúsculas
+    } else {
+      contadorImpares++;
+    }
+  }
+
+  return { pares: contadorPares, impares: contadorImpares };
 }
 
 /* --------------------------------------------------------------------------
@@ -49,6 +102,9 @@ function contarParesEImpares(limite) {
 -------------------------------------------------------------------------- */
 function palabrasEnMayusculas(oracion) {
   // TU CÓDIGO AQUÍ 👇
+  const palabras = oracion.split(" ");
+  const palabrasMayusculas = palabras.map(palabra => palabra.toUpperCase());
+  return palabrasMayusculas;
 }
 
 /* --------------------------------------------------------------------------
@@ -60,6 +116,10 @@ function palabrasEnMayusculas(oracion) {
 -------------------------------------------------------------------------- */
 function clasificarNumero(numero) {
   // TU CÓDIGO AQUÍ 👇
+  return {
+    esPar: numero % 2 === 0,
+    mayorQueCinco: numero > 5
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -70,6 +130,13 @@ function clasificarNumero(numero) {
 -------------------------------------------------------------------------- */
 function divisiblesPor3NoNueve(limite) {
   // TU CÓDIGO AQUÍ 👇
+  const resultado = [];
+  for (let nro = 1; nro <= limite; nro++) {
+    if (nro % 3 === 0 && nro % 9 !== 0) {
+      resultado.push(nro);
+    }
+  }
+  return resultado;
 }
 
 /* --------------------------------------------------------------------------
@@ -81,6 +148,9 @@ function divisiblesPor3NoNueve(limite) {
 -------------------------------------------------------------------------- */
 function convertirTemperatura(celsius) {
   // TU CÓDIGO AQUÍ 👇
+  const f = Number.parseFloatFloat((celsius * 9 / 5 + 32).toFixed(2));
+  const k = celsius + 273.15;
+  return { fahrenheit: f, kelvin: k};
 }
 
 /* --------------------------------------------------------------------------
@@ -91,6 +161,14 @@ function convertirTemperatura(celsius) {
 -------------------------------------------------------------------------- */
 function contarTiradas(tiradas) {
   // TU CÓDIGO AQUÍ 👇
+  const conteo = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+  for (let i = 0; i < tiradas.length; i++) {
+    const tirada = tiradas[i];
+    if (tirada >= 1 && tirada <= 6) {
+      conteo[tirada]++;
+    }
+  }
+  return conteo;
 }
 
 /* --------------------------------------------------------------------------
@@ -101,6 +179,13 @@ function contarTiradas(tiradas) {
 -------------------------------------------------------------------------- */
 function obtenerDivisores(numero) {
   // TU CÓDIGO AQUÍ 👇
+  const divisores = [];
+  for (let i = 1; i <= numero; i++) {
+    if (numero % i === 0) {
+      divisores.push(i);
+    }
+  }
+  return divisores;
 }
 
 /* --------------------------------------------------------------------------
@@ -114,6 +199,19 @@ function obtenerDivisores(numero) {
 -------------------------------------------------------------------------- */
 function adivinarNumero(secreto, intentos) {
   // TU CÓDIGO AQUÍ 👇
+  const resultados = [];
+  //for (let i = 0; i < intentos.length; i++) {
+  for (let value of intentos) {  
+    const intento = value;
+    if (intento < secreto) {
+      resultados.push("Demasiado bajo");
+    } else if (intento > secreto) {
+      resultados.push("Demasiado alto");
+    } else {
+      resultados.push("¡Correcto!");
+    }
+  }
+  return resultados;
 }
 
 // 🚨 ¡NO TOCAR ESTA LÍNEA!
